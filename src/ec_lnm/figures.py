@@ -62,19 +62,19 @@ def plot_nomogram(output,font="Arial"):
     plt.rcParams.update({"font.family":font,"font.size":10,"svg.fonttype":"none","pdf.fonttype":42})
     fig,ax=plt.subplots(figsize=(7,5.4));fig.subplots_adjust(left=.25,right=.97,top=.96,bottom=.04)
     labels=["HE4 abnormal","MR-DMI","MTD (cm)","MR-LNM","Radiomics signature","DL signature"]
-    def axis(label,y,positions,ticklabels):
+    def axis(label,y,positions,ticklabels,stagger=False):
         ax.text(-8,y,label,ha="right",va="center",fontsize=10)
         ax.plot([min(positions),max(positions)],[y,y],color="#333",lw=.9)
-        for x,s in zip(positions,ticklabels):
-            ax.plot([x,x],[y,y-.09],color="#333",lw=.7);ax.text(x,y-.13,s,ha="center",va="top",fontsize=9)
+        for i,(x,s) in enumerate(zip(positions,ticklabels)):
+            ax.plot([x,x],[y,y-.09],color="#333",lw=.7);ax.text(x,y-.13-(.19 if stagger and i%2 else 0),s,ha="center",va="top",fontsize=9)
     axis("Points",9,np.arange(0,101,20),[str(x) for x in range(0,101,20)])
     for i,(label,lo,hi,b) in enumerate(zip(labels,lower,upper,spec["coefficients"])):
-        ticks=np.arange(lo,hi+1,1 if hi<=1 else 2 if i==2 else 1)
+        ticks=np.arange(lo,hi+1,1 if hi<=1 else 5 if i==2 else 1)
         axis(label,8-i,(ticks-lo)*b/unit,[f"{v:g}" for v in ticks])
     axis("Total points",1.7,np.arange(0,maximum+1,25),[f"{v:g}" for v in np.arange(0,maximum+1,25)])
     probabilities=np.array([.001,.01,.05,.10,.25,.5,.75,.9,.99])
     positions=(np.log(probabilities/(1-probabilities))-baseline)/unit
-    axis("LNM probability",.65,positions,[f"{v:g}" for v in probabilities])
+    axis("LNM probability",.65,positions,[f"{v:g}" for v in probabilities],stagger=True)
     ax.set(xlim=(-5,maximum+3),ylim=(0,9.5));ax.axis("off")
     for ext in ["png","svg","pdf"]:fig.savefig(output/("Fig4."+ext),dpi=600,facecolor="white")
     plt.close(fig)
