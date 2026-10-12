@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ec-mri-lnm-prediction"
+version = "0.1.0"
+description = "Patient-level EC nodal prediction, statistical evaluation and documented imaging reference implementations"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+analysis = ["numpy>=1.24,<3", "pandas>=2,<4", "scipy>=1.11,<2", "scikit-learn>=1.3,<2", "statsmodels>=0.14,<0.16", "matplotlib>=3.7,<4", "openpyxl>=3.1,<4"]
+imaging = ["torch>=2.6,<3", "torchvision>=0.21,<1", "numpy>=1.24,<3", "Pillow>=10,<13", "scikit-learn>=1.3,<2", "imbalanced-learn>=0.12,<1"]
+
+[project.scripts]
+ec-lnm = "ec_lnm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ec_lnm = ["assets/*.json", "assets/*.csv"]

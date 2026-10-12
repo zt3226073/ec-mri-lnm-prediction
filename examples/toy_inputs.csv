@@ -1,0 +1,3 @@
+ID,HE4,MR_reported_DMI,MR_reported_diameter,MR_reported_LNM,radiomics,DL
+DEMO-A,0,0,1,0,0,0
+DEMO-B,1,1,3,1,0.5,0.5

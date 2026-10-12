@@ -1,0 +1,98 @@
+{
+  "Clinical": {
+    "input_features": [
+      "HE4",
+      "MR_reported_DMI",
+      "MR_reported_diameter",
+      "MR_reported_LNM"
+    ],
+    "intercept": -4.914329122549835,
+    "coefficients": [
+      0.9886223577177498,
+      1.2594917134213293,
+      0.3314301971277922,
+      1.5176838562651187
+    ],
+    "AIC": 198.75787931628946,
+    "threshold": 0.2069956842495723
+  },
+  "Clinical+Radiomics": {
+    "input_features": [
+      "HE4",
+      "MR_reported_DMI",
+      "MR_reported_diameter",
+      "MR_reported_LNM",
+      "radiomics"
+    ],
+    "intercept": -5.2073590603993,
+    "coefficients": [
+      0.848676425226653,
+      1.3458903741771016,
+      0.27006137051085155,
+      1.359344876200919,
+      1.1104671672124904
+    ],
+    "AIC": 168.5456633832086,
+    "threshold": 0.23338074329537573
+  },
+  "Clinical+DL": {
+    "input_features": [
+      "HE4",
+      "MR_reported_DMI",
+      "MR_reported_diameter",
+      "MR_reported_LNM",
+      "DL"
+    ],
+    "intercept": -6.60814353064866,
+    "coefficients": [
+      1.103777434849854,
+      1.5692812650040697,
+      0.301208613380795,
+      1.7453047531354442,
+      1.7334352024332766
+    ],
+    "AIC": 125.32430588871273,
+    "threshold": null
+  },
+  "Nomogram": {
+    "input_features": [
+      "HE4",
+      "MR_reported_DMI",
+      "MR_reported_diameter",
+      "MR_reported_LNM",
+      "radiomics",
+      "DL"
+    ],
+    "intercept": -7.89168961437962,
+    "coefficients": [
+      1.3786119906712764,
+      1.64361287652619,
+      0.29974780727615896,
+      1.637897220624407,
+      1.660483111108306,
+      1.9395303548011702
+    ],
+    "AIC": 93.70575711806384,
+    "threshold": 0.161
+  },
+  "Radiomics": {
+    "input_features": [
+      "radiomics"
+    ],
+    "intercept": -1.8393882773076218,
+    "coefficients": [
+      0.9471752007154338
+    ],
+    "threshold": 0.25055655625971895
+  },
+  "DL": {
+    "input_features": [
+      "DL"
+    ],
+    "intercept": -2.441005814346525,
+    "coefficients": [
+      1.312251899267176
+    ],
+    "threshold": 0.2609194096163888
+  }
+}
