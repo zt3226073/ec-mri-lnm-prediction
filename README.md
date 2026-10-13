@@ -60,7 +60,7 @@ Only internal and external patients are pooled. Eligibility requires all seven p
 
 See `docs/IMAGING_REFERENCE.md` before using `imaging.py`, `signatures.py`, `network.py` or `gradcam.py`. Target class: LNM-positive pre-sigmoid fusion logit. Target layers: `layer4[-1].conv3` in each branch. Maps use spatial-mean gradient weights, weighted activation sum, ReLU, independent 0–1 normalization and bilinear enlargement. The display overlay is 60% MRI and 40% JET heatmap. Within-map activation is not a nodal-metastasis probability and cannot directly explain the downstream logistic nomogram.
 
-The 189-MB checkpoint, clinical tables, source MRI, ROIs and CAM arrays are **not distributed**. A checkpoint is loaded only from a caller-provided local path using `torch.load(..., weights_only=True)`. Missing N4/registration settings, full ordered radiomics headers, raw feature matrices, fold records and pre-standardization patient-signature parameters preclude an independently verified complete MRI-to-risk reproduction.
+The author-authorized checkpoint, scalers, selected-input classifiers and feature metadata are available in the [model-asset release](https://github.com/zt3226073/ec-mri-lnm-prediction/releases/tag/model-assets-20261013). Clinical tables, source MRI, ROIs and CAM arrays are **not distributed**. Historical patient-level pipelines in that archive are clearly marked as legacy; use the repository’s current full-precision equations for the paper models. A checkpoint is loaded only from a caller-provided local path using `torch.load(..., weights_only=True)`. Missing N4/registration settings, full ordered radiomics headers, raw feature matrices, fold records and pre-standardization patient-signature parameters preclude an independently verified complete MRI-to-risk reproduction.
 
 ## Scope and threshold
 
@@ -76,6 +76,10 @@ Tests use artificial arrays only. Private data are excluded from the Git reposit
 
 ## License and sources
 
-Code is released under the MIT license. Data and checkpoint redistribution is not granted by this license. Dependencies retain their own licenses.
+Code and the author-authorized model-asset release are distributed under the MIT license. Clinical data redistribution is not granted. Dependencies retain their own licenses.
 
 Method/API sources: [Torchvision ResNet-50](https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html), [BorderlineSMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.BorderlineSMOTE.html), [Grad-CAM paper](https://arxiv.org/abs/1610.02391).
+
+## Model downloads
+
+See [models/MODEL_ASSETS.md](models/MODEL_ASSETS.md) for download links, checksums and the distinction between imaging assets, legacy mappings and the current paper equations. The plotting commands produce Fig.3 (nomogram), Fig.4 (ROC/PR) and Fig.5 (calibration/DCA), with wider square plot boxes and single-row probability ticks.

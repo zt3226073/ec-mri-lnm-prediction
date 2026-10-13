@@ -1,0 +1,116 @@
+{
+  "release": "model-assets-20261013",
+  "source_files": [
+    {
+      "path": "downstream_models/clinical_model.joblib",
+      "bytes": 1583,
+      "sha256": "7d6e4c3a5f727735d708a2e3be830f2fa3dabe0c3ddba50e91875aab1b584f6e",
+      "role": "legacy_patient_level_mapping",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "downstream_models/clinical_radiomics_model.joblib",
+      "bytes": 1627,
+      "sha256": "cf47d1956490e4e4346d1281eea62617007488d5b4ec0f29e7961a8b8833949c",
+      "role": "legacy_patient_level_mapping",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "downstream_models/DL_selected_feature_classifier.joblib",
+      "bytes": 1562,
+      "sha256": "e65650e001e0721ea84bbbaacef8471a5ca3c52df9d205044e01b93fe1ec8d52",
+      "role": "selected_feature_classifier",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "downstream_models/DL_signature_model.joblib",
+      "bytes": 1426,
+      "sha256": "a30ecc4128a4315bf39978f6a49a891c7a9572192ea9fcde5a366ce5617c399e",
+      "role": "legacy_patient_level_mapping",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "downstream_models/nomogram_surrogate_model.joblib",
+      "bytes": 1664,
+      "sha256": "2cf483eeeb615b4b95b055b0087c86f033b2b515f7e2ff7b0323f68e6c488ec6",
+      "role": "legacy_patient_level_mapping",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "downstream_models/radiomics_selected_feature_classifier.joblib",
+      "bytes": 1978,
+      "sha256": "32ec378b9280e57ff6320fab66e61eed35a4a43851f48d6f8ea446feb4be7ae7",
+      "role": "selected_feature_classifier",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "downstream_models/radiomics_signature_model.joblib",
+      "bytes": 1433,
+      "sha256": "8073685dc574b25b7448131bcd5a31cbf5ec4bdae91b51584302012c6bcdb1d8",
+      "role": "legacy_patient_level_mapping",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "feature_metadata/downstream_model_coefficients.csv",
+      "bytes": 1898,
+      "sha256": "18c67a59e17f094b9f7eff152e3f24ba83b4c8d2c3a419c1c02a5eadc5788281",
+      "role": "feature_metadata",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "feature_metadata/patient_level_signature_statistics.csv",
+      "bytes": 697,
+      "sha256": "1ca8d9aedce8826fac265ce564163811352cc487ed3b3021dbcae444dd09ca7c",
+      "role": "feature_metadata",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "feature_metadata/selected_DL_indices.csv",
+      "bytes": 145,
+      "sha256": "fbc0c076cb18c590a44b360329ed6ee8a1e16232c486f18bb41809c9defc2bec",
+      "role": "feature_metadata",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "feature_metadata/selected_radiomics_features.csv",
+      "bytes": 1005,
+      "sha256": "bec07be8ad25f6ea2ab9a39b673511c818d23b3c84f7918a784f429abf32b741",
+      "role": "feature_metadata",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "network/four_branch_resnet50_checkpoint.pth",
+      "bytes": 189583711,
+      "sha256": "e356e600a0075f0a20c5c22a128faef2567abcb8752323b48f2337baaccfceda",
+      "role": "network_checkpoint",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "preprocessing/DL_feature_scaler_8192d.joblib",
+      "bytes": 197191,
+      "sha256": "944131e798ec30016d5491bf19ff9a1b0a34faebf0f05321f1c0ba99986913d9",
+      "role": "imaging_preprocessing",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "preprocessing/patient_signature_scaler.joblib",
+      "bytes": 631,
+      "sha256": "2468c2b1b6072819caeb6dc4cf29c2feff5ac6ccdaa40da3c4caedb6cc0b8ea1",
+      "role": "imaging_preprocessing",
+      "current_paper_patient_level_equation": false
+    },
+    {
+      "path": "preprocessing/radiomics_feature_scaler_6356d_.joblib",
+      "bytes": 153127,
+      "sha256": "e05f4fb198dfc1df7a0e29f9341b6fa643028638948c3b36173e60ec1c09a18a",
+      "role": "imaging_preprocessing",
+      "current_paper_patient_level_equation": false
+    }
+  ],
+  "checkpoint_contains_state_tensors_only": true,
+  "contains_patient_tables_or_images": false,
+  "paper_equations": "current_model_specifications.json",
+  "archived_joblib_sklearn_version": "1.6.1",
+  "portable_numeric_parameters": "portable_model_parameters.json",
+  "scope": "Original supplied imaging assets are archived; legacy downstream patient-level pipelines are not the current paper model. Complete original MRI-to-signature provenance is not established by this asset release."
+}
